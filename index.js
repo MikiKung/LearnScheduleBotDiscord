@@ -5,13 +5,15 @@ const express = require("express")
 
 const app = express()
 
+app.get("/",(req,res)=>{
+    res.send("test wake Heroku")
+})
 dotenv.config()
 
 app.listen(process.env.PORT || 5000, "0.0.0.0", () => {
     console.log("Burger Chan is Ready on Express")
     client.login(process.env.TOKEN)
 })
-
 
 const client = new Client(
     {
